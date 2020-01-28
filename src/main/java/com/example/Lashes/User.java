@@ -11,14 +11,19 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    @Column(name="FirstName")
+    @Column(name="FN")
     private String firstName;
-    @Column(name="LastName")
+    @Column(name="LN")
     private String lastName;
     @Column(name="Email")
     private String email;
     @Column(name="Age")
     private int age;
+
+
+    public String getUserInformation(){
+        return id +" "+  firstName +" " + lastName +" "+ email +" "+ age;
+    }
 
     public Integer getId() {
         return id;
