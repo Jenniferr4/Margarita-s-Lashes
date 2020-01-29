@@ -19,16 +19,12 @@ public class MainController {
     @GetMapping("/home")
     public String home(ModelMap model){
         model.put("usersList", userRepo.findAll());
-
+        model.put("user", new User());
         return "home";
     }
 
     @PostMapping("/add")
-    public String add(ModelMap model , @Valid @ModelAttribute("user") User user, BindingResult bindingResult){
-        if(bindingResult.hasErrors()){
-            model.put("user", userRepo.findAll());
-            return "home";
-        }
+    public String add(@ModelAttribute("user") User user){
         userRepo.save(user);
         return "redirect:/home";
     }

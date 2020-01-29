@@ -8,7 +8,8 @@ import javax.persistence.*;
 @Table(name= "user")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Id", unique = true)
     private Integer id;
 
     @Column(name="FN")
@@ -21,9 +22,6 @@ public class User {
     private int age;
 
 
-    public String getUserInformation(){
-        return id +" "+  firstName +" " + lastName +" "+ email +" "+ age;
-    }
 
     public Integer getId() {
         return id;

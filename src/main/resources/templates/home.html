@@ -34,5 +34,16 @@
             </div>
 
         </table>
+        <br/>
+        <br/>
+
+        <form action="#" th:action="@{/add}" th:object="${user}" method="post">
+            <p>First Name: <input type="text" th:field="*{firstName}" /></p>
+            <p>Last Name: <input type="text" th:field="*{lastName}" /></p>
+            <p>Email: <input type="text" th:field="*{email}" /></p>
+            <p>Age: <input type="text" th:field="*{age}" /></p>
+             <p><input type="submit" value="Submit" /></p>
+        </form>
+
     </body>
 </html>
